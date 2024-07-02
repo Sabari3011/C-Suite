@@ -1,0 +1,253 @@
+:root {
+  --primary-color: #8949ff;
+  --primary-light: #a86aff;
+  --primary-dark: #5f32b8;
+  --primary-bg: #f3e6ff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+.courseContentContainer {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  cursor: default;
+  background-color: var(--primary-bg);
+}
+
+.firstRow {
+  width: 100%;
+  padding: 13px 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.firstRowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  /* padding: 0px; */
+  color: white;
+  padding: 5px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: var(--primary-light);
+  transition: all 0.3s;
+}
+
+.firstRowBtn span {
+  font-size: 1.5em;
+  padding: 0;
+  line-height: 1em;
+  width: min-content;
+  /* background-color: red; */
+}
+
+.firstRowBtn:hover,
+.firstRowHeadingBox button:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-color);
+  box-shadow: 0px 6px 8px var(--shadow-light);
+}
+
+.firstRowHeadingBox {
+  display: flex;
+  /* background-color: yellow; */
+}
+
+.courseHeading {
+  font-size: 1.75em;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.firstRowHeadingBox button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 0px;
+  border-radius: 8px;
+  background-color: var(--primary-light);
+  transition: all 0.3s;
+}
+
+/* .firstRowHeadingBox button span {
+  background-color: aqua;
+} */
+
+.settingTab {
+  display: flex;
+  margin-right: -10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-bg);
+}
+
+.profileBox,
+.settingBox,
+.HelpBox,
+.logoutBox {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 20px;
+  font-size: 1.1em;
+  background-color: var(--primary-light);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.profileBox:hover,
+.settingBox:hover,
+.HelpBox:hover,
+.logoutBox:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0px 4px 6px var(--shadow-light);
+}
+
+.courseContentContainer .secondRow {
+  /* background-color: aqua; */
+  width: 100%;
+}
+
+.secondRow .col-8 {
+  padding-left: 0%;
+}
+
+/* .videoBox {
+  background-color: rgb(159, 101, 25);
+} */
+
+.videoBox iframe {
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.videoTitle {
+  background-color: yellow;
+  color: var(--primary-dark);
+}
+
+.tabBox {
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.accordianBox {
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+}
+
+.accordianBox .accordion-item {
+  border: none;
+  /* background-color: violet; */
+  margin: 8px 0;
+  border-radius: 16px;
+}
+
+.accordianBox .accordion-button {
+  border-radius: 16px !important;
+  background-color: var(--primary-bg);
+  border: none;
+  transition: border-radius 0.3s ease, background-color 0.3s;
+}
+
+.accordianBox .accordion-button:not(.collapsed) {
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.accordianBox .accordion-collapse {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+
+.accordianBox .accordion-header:focus,
+.accordianBox .accordion-header:active,
+.accordianBox .accordion-header:focus-visible,
+.accordianBox .accordion-button:focus,
+.accordianBox .accordion-button:active,
+.accordianBox .accordion-button:focus-visible {
+  outline: none;
+  /* color: black; */
+  box-shadow: none;
+}
+
+.accordianBox .accordion-header .accordion-button {
+  padding: 15px;
+}
+
+.accordianBox .accordion-body {
+  padding: 8px 10px;
+  padding-left: 50px;
+  border-radius: 16px;
+  font-size: 0.9em;
+  /* background-color: var(--primary-bg); */
+}
+
+.accordianBox .accordion-body .list-group-item:first-child {
+  margin-top: 0px;
+}
+
+.accordianBox .accordion-body .list-group-item {
+  margin-top: 7px;
+  display: flex;
+  outline: none;
+  border: none;
+  flex-direction: column;
+  border-radius: 10px !important;
+  background-color: var(--primary-bg);
+}
+
+.lesson-meta {
+  /* background-color: yellow; */
+  padding-left: 15px;
+}
+
+.lesson-title {
+  font-size: 1.1em;
+  font-weight: 450;
+  margin-bottom: 5px;
+  /* background-color: steelblue; */
+}
+
+.lesson-meta .lesson-duration,
+.list-group-item .lesson-duration {
+  padding: 0 0 0 20px;
+  font-size: 0.8em;
+  width: max-content;
+  /* background-color: green; */
+}
+
+.lesson-meta span {
+  font-size: 0.8em;
+}
+
+.list-group-item {
+  padding: 8px 10px;
+  /* background-color: palegoldenrod; */
+}
+
+.list-group-item a {
+  padding-left: 5px;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--primary-dark);
+}

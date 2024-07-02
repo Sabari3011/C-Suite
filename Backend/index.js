@@ -11,11 +11,21 @@ app.use(cors());
 
 //model
 const Contact = require('./models/Contact.model')
+const CourseList = require('./models/CourseList.model')
+
+//routers used
 const contactRouter= require('./routes/Contact.router')
+const courseListRouter = require('./routes/CourseList.router')
+const courseDetailsRouter = require('./routes/CourseDetails.router')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use('/api/contact',contactRouter)
+app.use('/api/courseList',courseListRouter)
+app.use('/api/courseDetail',courseDetailsRouter)
+
+
+
 
 
 
