@@ -79,24 +79,24 @@ userRouter.put('/updatecourse/:id',async(req,res)=>{
 
 
 
-// delete a course
-userRouter.delete('/:id',async(req,res)=>{
+// delete a user
+// userRouter.delete('/:id',async(req,res)=>{
 
-        try{
-            const course = await User.findByIdAndDelete(req.params.id);
-            if(course){
-                res.status(200).json({success : true ,course:course})
-            }
-            else{
-                res.status(404).json({success : false ,message:"course Not Found"})
+//         try{
+//             const course = await User.findByIdAndDelete(req.params.id);
+//             if(course){
+//                 res.status(200).json({success : true ,course:course})
+//             }
+//             else{
+//                 res.status(404).json({success : false ,message:"course Not Found"})
     
-            }
+//             }
     
-        }
-        catch(e){
-            res.status(400).json({success : false ,error:e.message})
+//         }
+//         catch(e){
+//             res.status(400).json({success : false ,error:e.message})
     
-        }
-})
+//         }
+// })
 
 module.exports = userRouter;
