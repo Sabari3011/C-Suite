@@ -22,7 +22,7 @@ userRouter.post('/',async(req,res)=>{
 
     try{
         data = await User.create(req.body)
-        res.status(200).json({success : true ,user : data , message : "Courese added successfully"})
+        res.status(200).json({success : true ,user : data , message : "User added successfully"})
 
     }
     catch(e){
@@ -83,12 +83,12 @@ userRouter.put('/updatecourse/:id',async(req,res)=>{
 // userRouter.delete('/:id',async(req,res)=>{
 
 //         try{
-//             const course = await User.findByIdAndDelete(req.params.id);
-//             if(course){
-//                 res.status(200).json({success : true ,course:course})
+//             const user = await User.findByIdAndDelete(req.params.id);
+//             if(user){
+//                 res.status(200).json({success : true ,User:user})
 //             }
 //             else{
-//                 res.status(404).json({success : false ,message:"course Not Found"})
+//                 res.status(404).json({success : false ,message:"user Not Found"})
     
 //             }
     
