@@ -15,8 +15,11 @@ const CourseDetails = () => {
   const [courseContentDetailsData, setcourseContentDetailsData] = useState([]);
 
   
+  console.log("before fetchdata");
   useEffect(() => {
     const fetchData = async () => { 
+      console.log("fetchdata");
+
       try {
         const response = await axios.get('http://localhost:5000/api/courseDetail');
         console.log("res---",response);
@@ -31,7 +34,8 @@ const CourseDetails = () => {
       }
     };
   
-    fetchData();
+    setcourseContentDetailsData(fetchData());
+
   }, []);
   
   
