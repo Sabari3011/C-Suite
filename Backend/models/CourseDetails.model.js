@@ -12,7 +12,7 @@ const CourseDetailsSchema = mongoose.Schema(
 
         overviewPoints :{
             type : Array ,
-            required : [true, 'overviewPoints field required']
+            required : [false, 'overviewPoints field required']
         },
         
         description:{
@@ -22,12 +22,12 @@ const CourseDetailsSchema = mongoose.Schema(
         
         lessons :{
             type : Array ,
-            required : [true, 'lessons field required']
+            required : [false, 'lessons field required']
         },
         
         header:{
             type : String ,
-            required : [true, 'header field required']
+            required : [false, 'header field required']
         },
         videoUrl:{
             type : String ,
@@ -36,17 +36,17 @@ const CourseDetailsSchema = mongoose.Schema(
         
         whoIsThisFor :{
             type : Array ,
-            required : [true, 'whoIsThisFor field required']
+            required : [false, 'whoIsThisFor field required']
         },
         
         whatYouGet :{
             type : Array ,
-            required : [true, 'whatYouGet field required']
+            required : [false, 'whatYouGet field required']
         },
 
         syllabus:{
             type : String ,
-            required : [true, 'syllabus field required']
+            required : [false, 'syllabus field required']
         },
 
         price:{
@@ -56,7 +56,7 @@ const CourseDetailsSchema = mongoose.Schema(
 
         courseDetails :{
             type : Array ,
-            required : [true, 'courseDetails field required']
+            required : [false, 'courseDetails field required']
         },
 
 
