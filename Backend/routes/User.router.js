@@ -2,7 +2,7 @@ const {Router} = require('express')
 const userRouter = Router()
 const  User = require('../models/User.model')
 
-//get User
+//get Users
 userRouter.get('/',async(req,res)=>{
     
     try{
@@ -16,10 +16,31 @@ userRouter.get('/',async(req,res)=>{
     }
 
 })
+//get user
+userRouter.get('/:id',async(req,res)=>{
+    
+    try{
+        data = await User.findById(req.params.id)
+        if (!data){
+
+            res.status(404).json({success : false , message : "User not found"})
+        }
+        else{
+
+            res.status(200).json({success : true ,user : data , message : "Get request success"})
+        }
+
+    }
+    catch(e){
+        res.status(500).json({success : false ,message : e.message})
+
+    }
+
+})
 
 //add a new User 
 userRouter.post('/',async(req,res)=>{
-    
+
     try{
         data = await User.create(req.body)
         res.status(200).json({success : true ,user : data , message : "User added successfully"})

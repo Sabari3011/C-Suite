@@ -41,7 +41,7 @@ const UsersList = ({ editAction }) => {
     };
 
     fetchData();
-  }, []);
+  }, [users]);
   
 // console.log(user)
   return (
