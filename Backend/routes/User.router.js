@@ -19,7 +19,7 @@ userRouter.get('/',async(req,res)=>{
 
 //add a new User 
 userRouter.post('/',async(req,res)=>{
-
+    
     try{
         data = await User.create(req.body)
         res.status(200).json({success : true ,user : data , message : "User added successfully"})
@@ -32,6 +32,29 @@ userRouter.post('/',async(req,res)=>{
 
 
 })
+
+
+
+// edit a existing user
+
+userRouter.put('/:id',async(req,res)=>{
+    try{
+        
+
+        const user = await User.findByIdAndUpdate(req.params.id , req.body) ;
+        if (!user){
+            res.status(404).json({success : false ,message:"user Not Found"})
+        }
+        else{
+            res.status(200).send({success : true ,message:"Successfully updated"})
+        }
+    }
+    catch(e){
+        res.status(500).json({success : false ,message : e.message})
+
+    }
+})
+
 
 //add a  course to user
 userRouter.put('/updatecourse/:id',async(req,res)=>{
@@ -80,23 +103,23 @@ userRouter.put('/updatecourse/:id',async(req,res)=>{
 
 
 // delete a user
-// userRouter.delete('/:id',async(req,res)=>{
+userRouter.delete('/:id',async(req,res)=>{
 
-//         try{
-//             const user = await User.findByIdAndDelete(req.params.id);
-//             if(user){
-//                 res.status(200).json({success : true ,User:user})
-//             }
-//             else{
-//                 res.status(404).json({success : false ,message:"user Not Found"})
+        try{
+            const user = await User.findByIdAndDelete(req.params.id);
+            if(user){
+                res.status(200).json({success : true ,User:user})
+            }
+            else{
+                res.status(404).json({success : false ,message:"user Not Found"})
     
-//             }
+            }
     
-//         }
-//         catch(e){
-//             res.status(400).json({success : false ,error:e.message})
+        }
+        catch(e){
+            res.status(400).json({success : false ,error:e.message})
     
-//         }
-// })
+        }
+})
 
 module.exports = userRouter;
