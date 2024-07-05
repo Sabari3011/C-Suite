@@ -18,6 +18,7 @@ const contactRouter= require('./routes/Contact.router')
 const courseListRouter = require('./routes/CourseList.router')
 const courseDetailsRouter = require('./routes/CourseDetails.router')
 const userRouter = require('./routes/User.router')
+const paymentRouter = require('./routes/Payment.router')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -25,6 +26,7 @@ app.use('/api/contact',contactRouter)
 app.use('/api/courseList',courseListRouter)
 app.use('/api/courseDetail',courseDetailsRouter)
 app.use('/api/user',userRouter)
+app.use('/api/payment',paymentRouter)
 
 
 
