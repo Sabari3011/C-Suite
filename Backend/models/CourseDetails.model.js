@@ -29,9 +29,10 @@ const CourseDetailsSchema = mongoose.Schema(
             type : String ,
             required : [false, 'header field required']
         },
+
         videoUrl:{
             type : String ,
-            required : [true, 'videoUrl field required']
+            required : [false, 'videoUrl field required']
         },
         
         whoIsThisFor :{
@@ -58,7 +59,10 @@ const CourseDetailsSchema = mongoose.Schema(
             type : Array ,
             required : [false, 'courseDetails field required']
         },
-
+        image :{
+            type : String ,
+            required : [false, 'image field required']
+        },
 
 
 

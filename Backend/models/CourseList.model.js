@@ -3,10 +3,7 @@ const mongoose = require('mongoose')
 const CourseListSchema = mongoose.Schema(
 
     {
-        id :{
-            type : Number ,
-            required : [true, 'ID field required']
-        },
+        
         title :{
             type : String ,
             required : [true, 'title field required']
@@ -17,7 +14,7 @@ const CourseListSchema = mongoose.Schema(
         },
         image :{
             type : String ,
-            required : [true, 'image field required']
+            required : [false, 'image field required']
         },
         lessons :{
             type : Array ,
