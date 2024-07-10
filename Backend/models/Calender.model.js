@@ -10,9 +10,14 @@ const CalenderSchema = mongoose.Schema({
         type : String ,
         required : [true, 'Event Title field required']
     },
-    event_date : {
+    event_start : {
         type : Date,
-        required : [true, 'Event Date field required']
+        required : [true, 'Event Start Date field required']
+
+    },
+    event_end : {
+        type : Date,
+        required : [true, 'Event End Date field required']
 
     }
 })
