@@ -5,6 +5,9 @@ const connectionString = "mongodb+srv://expressmailprovider:sabari123@cluster0.r
 
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 // For cors
 const cors = require('cors');
 app.use(cors());
@@ -16,9 +19,12 @@ const courseDetailsRouter = require('./routes/CourseDetails.router')
 const userRouter = require('./routes/User.router')
 const paymentRouter = require('./routes/Payment.router')
 const calenderRouter = require('./routes/Calender.router')
+const testRouter = require('./routes/Test.router');
+const newcourse = require('./routes/NewCourse.router');
+const UploadDriveRouter = require('./routes/UploadToDrive.router')
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+
+// app.use(bodyParser.json)
 
 app.use('/api/contact', contactRouter)
 app.use('/api/courseList', courseListRouter)
@@ -26,6 +32,9 @@ app.use('/api/courseDetail', courseDetailsRouter)
 app.use('/api/user', userRouter)
 app.use('/api/payment', paymentRouter)
 app.use('/api/calender', calenderRouter)
+app.use('/api/tests', testRouter);
+app.use('/api/newcourse', newcourse);
+app.use('/api/uploadtodrive', UploadDriveRouter);
 
 
 
