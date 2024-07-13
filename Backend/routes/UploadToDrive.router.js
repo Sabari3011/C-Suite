@@ -39,7 +39,7 @@ UploadDriveRouter.post('/',upload.fields([{ name: 'document' }]),async(req,res)=
     let mime = req.files.document[0].mimetype
     let originalName = req.files.document[0].originalname
    
-    OAuth2Client.setCredentials({refresh_token : "1//0g77fi9lXC_iDCgYIARAAGBASNwF-L9Ir6bYP12xi1Nw-OfrftfCzxMqcd4e_mZ6v3LlxhzY7El4cb127PzeOgXB4SbuSUfJZpdI" })
+    OAuth2Client.setCredentials({refresh_token : process.env.REFRESH_TOKEN })
     const drive = google.drive({version :'v3' , auth : OAuth2Client})
 
     var fileid ;
