@@ -36,8 +36,10 @@ const upload = multer({ storage: storage });
 
 
 UploadDriveRouter.post('/',upload.fields([{ name: 'document' }]),async(req,res)=>{
+   
+   
     try {
-
+    
     let mime = req.files.document[0].mimetype
     let originalName = req.files.document[0].originalname
    
