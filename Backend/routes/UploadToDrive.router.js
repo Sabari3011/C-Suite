@@ -36,6 +36,8 @@ const upload = multer({ storage: storage });
 
 
 UploadDriveRouter.post('/',upload.fields([{ name: 'document' }]),async(req,res)=>{
+    try {
+
     let mime = req.files.document[0].mimetype
     let originalName = req.files.document[0].originalname
    
@@ -87,7 +89,6 @@ const geturl = async(file_id)=>{
             fields : 'webViewLink , webContentLink'
         })
     
-        console.log('url&ids',result.data)
         res.json({url : result.data.webViewLink})
     
         return result.data
@@ -99,7 +100,7 @@ const geturl = async(file_id)=>{
 }
 
  promise1.then((file_id)=>{
-    console.log("----data-----",file_id)
+    
     fileid = file_id
     url = geturl(file_id)
     fs.unlinkSync(`./temp/${uniqueFileName}`);
@@ -107,6 +108,11 @@ const geturl = async(file_id)=>{
 
 })
 
+
+}catch(e){
+    console.log(e)
+    res.status(400).json({error : e.message , success : false})
+}
 
 })
 
