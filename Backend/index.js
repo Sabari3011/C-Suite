@@ -22,6 +22,7 @@ const calenderRouter = require('./routes/Calender.router')
 const testRouter = require('./routes/Test.router');
 const newcourse = require('./routes/NewCourse.router');
 const UploadDriveRouter = require('./routes/UploadToDrive.router')
+const UploadVimeoRouter = require('./routes/UploadToVimeo.router')
 
 
 // app.use(bodyParser.json)
@@ -35,6 +36,7 @@ app.use('/api/calender', calenderRouter)
 app.use('/api/tests', testRouter);
 app.use('/api/newcourse', newcourse);
 app.use('/api/uploadtodrive', UploadDriveRouter);
+app.use('/api/uploadtovimeo', UploadVimeoRouter);
 
 
 
