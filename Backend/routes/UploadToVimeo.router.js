@@ -1,5 +1,6 @@
 
 const Router = require('express')
+const { getVideoDurationInSeconds } = require('get-video-duration')
 
 
 const UploadVimeoRouter = Router() ;
@@ -42,6 +43,14 @@ try{
 
 
 let file_name = `./temp/${uniqueVideoName}`
+let video_duration = null
+getVideoDurationInSeconds(file_name).then((duration) => {
+  let m = Math.floor(duration / 60);
+  let s = Math.floor(duration - (m * 60))
+  console.log(`${m} mins ${s} sec`)
+  video_duration =  `${m} mins ${s} sec`
+})
+
 
 console.log(req.files.video[0].originalname)
 
@@ -54,7 +63,7 @@ console.log(req.files.video[0].originalname)
     function (uri) {
         let newurl = uri.split('/')[2]
       console.log('Your video URI is: ' + "https://vimeo.com/"+ newurl);
-      res.status(200).json({success : true , videoCode : `${newurl}` , videoUrl : `https://player.vimeo.com/video/${newurl}` })
+      res.status(200).json({success : true , videoCode : `${newurl}` , videoUrl : `https://player.vimeo.com/video/${newurl}`, duration : video_duration })
       fs.unlinkSync(`./temp/${uniqueVideoName}`)
     },
     function (bytes_uploaded, bytes_total) {
