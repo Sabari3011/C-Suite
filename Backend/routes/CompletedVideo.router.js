@@ -9,7 +9,7 @@ CompleteVideo.get('/:userId/:courseId', async(req,res)=>{
     try{
         const {userId , courseId} = req.params
         completedUserData = await CompletedVideoModel.find({userId : userId , courseId : courseId})
-        if(completedUserData){
+        if(completedUserData.length != 0){
             res.status(200).json({success:true , completedUserData : completedUserData })
         }
         else{
