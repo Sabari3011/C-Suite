@@ -23,7 +23,7 @@ const testRouter = require('./routes/Test.router');
 const newcourse = require('./routes/NewCourse.router');
 const UploadDriveRouter = require('./routes/UploadToDrive.router')
 const UploadVimeoRouter = require('./routes/UploadToVimeo.router')
-
+const CompleteVideo = require('./routes/CompletedVideo.router')
 
 // app.use(bodyParser.json)
 
@@ -37,6 +37,7 @@ app.use('/api/tests', testRouter);
 app.use('/api/newcourse', newcourse);
 app.use('/api/uploadtodrive', UploadDriveRouter);
 app.use('/api/uploadtovimeo', UploadVimeoRouter);
+app.use('/api/completevideo', CompleteVideo);
 
 
 
