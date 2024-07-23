@@ -80,7 +80,16 @@ console.log(req.files.video[0].originalname)
     function (error) {
       console.log('Failed because: ' + error)
       res.status(500).json({success : false})
-      fs.unlinkSync(`./temp/${uniqueVideoName}`)
+
+      try{
+        fs.unlinkSync(`./temp/${uniqueVideoName}`)
+        console.log('deleted successfully')
+
+
+      }catch(e){
+        console.log("file already deleted unable to deleted")
+      }
+
       console.log('deleted successfully')
 
     }
