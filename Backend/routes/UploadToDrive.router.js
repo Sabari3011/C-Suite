@@ -107,18 +107,26 @@ const geturl = async(file_id)=>{
     url = geturl(file_id)
     try{
         fs.unlinkSync(`./temp/${uniqueFileName}`);
+        console.log('temp deleted')
 
     }catch(e){
         console.log("no such dir or already ")
     }
-    console.log('temp deleted')
 
 })
 
 
 }catch(e){
     console.log(e)
+    try{
+        fs.unlinkSync(`./temp/${uniqueFileName}`);
+        console.log('temp deleted')
+
+    }catch(e){
+        console.log("no such dir or already ")
+    }
     res.status(400).json({error : e.message , success : false})
+
 }
 
 })
