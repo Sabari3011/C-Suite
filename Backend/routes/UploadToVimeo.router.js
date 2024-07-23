@@ -90,7 +90,6 @@ console.log(req.files.video[0].originalname)
         console.log("file already deleted unable to deleted")
       }
 
-      console.log('deleted successfully')
 
     }
   )
