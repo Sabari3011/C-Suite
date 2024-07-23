@@ -91,7 +91,7 @@ const geturl = async(file_id)=>{
             fields : 'webViewLink , webContentLink'
         })
     
-        res.json({url : result.data.webViewLink})
+        res.status(200).json({url : result.data.webViewLink})
     
         return result.data
 
@@ -105,7 +105,12 @@ const geturl = async(file_id)=>{
     
     fileid = file_id
     url = geturl(file_id)
-    fs.unlinkSync(`./temp/${uniqueFileName}`);
+    try{
+        fs.unlinkSync(`./temp/${uniqueFileName}`);
+
+    }catch(e){
+        console.log("no such dir or already ")
+    }
     console.log('temp deleted')
 
 })
